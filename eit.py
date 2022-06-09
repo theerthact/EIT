@@ -5,8 +5,8 @@ import streamlit as st
 
 from matplotlib import pyplot as plt
 
-st.header("Absorption and Dispersion spectrum for a 3 level (Y type) ladder system")
-st.text("It plots the absorption and dispersion spectrum against probe detuning for a simple 3 level (Y type) ladder system. Here we can change the values of all the variables")
+st.header("Absorption and Dispersion spectrum for a 3 level ladder system")
+st.text("It plots the absorption and dispersion spectrum against probe detuning for a simple 3 level ladder system. Here we can change the values of all the variables")
 
 A = st.sidebar.number_input('γ_21', value=1.0, min_value=0.0, max_value=10000.0)
 B = st.sidebar.number_input('γ_31', value=1.0, min_value=0.0, max_value=10000.0)
