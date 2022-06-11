@@ -23,20 +23,20 @@ G = st.sidebar.number_input('Γ_41', value=1.0, min_value=-10000.0, max_value=10
 
 DJ2 = (D+J)**2
 DH2 = (D+H)**2
-denom = ((E*(F**2+DJ2)*(G**2+DH2)+((F**2+DJ2)(C**2)*G/4)+((G**2+DH2)*(B**2)*F/4))**2) + (D(F**2+DJ2)*(G**2+DH2)-((D+H)(F**2+DJ2)(C**2)/4)-(D+J)(G**2+DH2)*(B**2)*(F/4))**2
+denom = ((E*(F**2+DJ2)*(G**2+DH2)+((F**2+DJ2)*(C**2)*G/4)+((G**2+DH2)*(B**2)*F/4))**2) + (D*(F**2+DJ2)*(G**2+DH2)-((D+H)*(F**2+DJ2)*(C**2)/4)-(D+J)*(G**2+DH2)*(B**2)*(F/4))**2
 im = ((A/2)*((F**2+DJ2)*(G**2+DH2))*((F**2+DJ2)*(G**2+DH2)*E+(G**2+DH2)*((B**2)/4)*F+(F**2+DJ2)*(C**2)*G/4)) / denom
-re = ((A/2)*((F**2+DJ2)*(G**2+DH2)))*(D(F**2+DJ2)*(G**2+DH2)-((D+H)(F**2+DJ2)(C**2)/4)-(D+J)(G**2+DH2)*(B**2)*(F/4)) / denom
+re = ((A/2)*((F**2+DJ2)*(G**2+DH2)))*(D*(F**2+DJ2)*(G**2+DH2)-((D+H)*(F**2+DJ2)*(C**2)/4)-(D+J)*(G**2+DH2)*(B**2)*(F/4)) / denom
 
 fig, ax = plt.subplots()
 ax.plot(D, im, label='Imaginary')
 ax.plot(D, re, label='Real')
-ax.set_title(f"Absorption and Despersion Curves(Rabi Frequency, $\Omega_c = {B} and \Omega_c = {B}$)")
+ax.set_title(f"Absorption and Despersion Curves(Rabi Frequency, $\Omega_c = {B} and \Omega_c = {B}$)\np is probe, s is coupling and c is control")
 ax.set_xlabel("Detuning $\Delta_p$ (arbitrary units)")
 ax.set_ylabel("Susceptibility $\chi$ (arbitrary units)")
 ax.legend()
 st.pyplot(fig)
 
-fn = "multi_eit.png"
+fn = "ytype_ladder.png"
 plt.savefig(fn)
 with open(fn, "rb") as img:
     btn = st.download_button(
